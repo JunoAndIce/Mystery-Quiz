@@ -3,19 +3,19 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
 }
 
 :root{
-  --black: black;
-  --dark-gray: rgb(44, 44, 44);
-  --white: white;
+  --font-color: black;
+  --bg-color: white;
+  --dark-gray: rgb(80, 80, 80);
 }
 
 /* Dark mode shift  */
 [data-theme="dark"] {
-
-  --font-color: var(--white);
-  --bg-color:  var (--dark-gray);
+  --font-color: white;
+  --bg-color:  rgb(20, 20, 20);
 }
 
 
@@ -28,7 +28,7 @@
 }
 
 /* places slider within header  */
-.theme-switch {
+.dark-theme {
   display: inline-block;
   height: 34px;
   position: relative;
@@ -36,7 +36,7 @@
 }
 
 /* Hides the checkbox from view  */
-.theme-switch input {
+.dark-theme input {
   display:none;
 }
 
@@ -54,7 +54,7 @@
 
 /* Slider circle handler */
 .slider:before {
-  background-color: var(--white);
+  background-color: white;
   bottom: 4px;
   content: "";
   height: 26px;
@@ -91,27 +91,26 @@ input:checked + .slider:before {
 
 .main-header a {
   text-decoration: none;
-
   font-weight: 750;
   font-size: 2.9em;
-  color: var(--dark-gray); /* Font Color */
+  color: var(--font-color); /* Font Color */
 }
 
 /* fancy border under header  */
 /* Credits: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr */
 hr {
   border: none;
-  border-top: 3px double var(--black);
-  color: var(--black);
   overflow: visible;
   text-align: center;
+  border-top: 3px double var(--font-color);
+  color: var(--font-color);
   height: 5px;
   width: 750px;
   margin: auto;
 }
 
 hr:after {
-  background: var(--white);
+  background: var(--bg-color);
   content: '§';
   padding: 0 4px;
   position: relative;
@@ -133,6 +132,7 @@ hr:after {
 .quiz-info p {
   font-size: 1.2em;
   line-height: 2em;
+  color: var(--font-color);
 }
 
 /* Centers the button div  */
@@ -150,7 +150,7 @@ hr:after {
   padding: 1.0em 1.5em;
 
   font-size: 20px;
-  color: rgb(44, 44, 44);
+  color: var(--font-color);
   border-color: #00AA66;
   border-style: solid;
 }

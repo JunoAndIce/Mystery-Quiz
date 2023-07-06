@@ -5,8 +5,19 @@
   font-family: 'Poppins', sans-serif;
 }
 
-header {
+.main-header {
   text-align: center;
   margin: 10px;
+}
 
+.main-header a {
+  text-decoration: none;
+
+  font-weight: 750;
+  font-size: 1.8em;
+  color: black; /* Font Color */
+}
+
+#score-container {
+  visibility: hidden;
 }

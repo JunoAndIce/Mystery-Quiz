@@ -5,19 +5,77 @@
   font-family: 'Poppins', sans-serif;
 }
 
+:root{
+  --black: black;
+  --dark-gray: rgb(44, 44, 44);
+  --white: white;
+}
+
 .main-header {
   text-align: center;
-  margin: 10px;
+  margin: 7.5em 0 1.5em 0;
 }
 
 .main-header a {
   text-decoration: none;
 
   font-weight: 750;
-  font-size: 1.8em;
-  color: black; /* Font Color */
+  font-size: 2.9em;
+  color: var(--dark-gray); /* Font Color */
+}
+
+hr {
+  border: none;
+  border-top: 3px double var(--black);
+  color: var(--black);
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+  width: 750px;
+  margin: auto;
+}
+
+hr:after {
+  background: var(--white);
+  content: '§';
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
 }
 
 #score-container {
   visibility: hidden;
+}
+
+
+.quiz-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 5em 0;
+  text-align: center;
+
+}
+
+.quiz-info p {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.btn-container {
+  margin: auto;
+}
+
+#start-btn {
+  cursor: pointer;
+  background: transparent;
+
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 1.5em 3.5em;
+
+  
+  color: rgb(44, 44, 44);
+  border-color: #00AA66;
+  border-style: solid;
 }

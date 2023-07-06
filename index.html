@@ -22,26 +22,37 @@
 <!-- TODO: Have user enter their initials-->
 <!-- TODO: Open high scores screen with a play again button and all high scores recorded/ high scores recorded into local storage-->
 
+<!-- TODO SPECIAL: ADD DARK MODE SLIDER -->
+
 <body>
 
   <header>
-    
+
     <div class="main-header">
       <a href="#">Mystery Quiz: The Breakdown</a>
     </div>
-      
+
+    <hr>
     
+    <!-- Score hidden by default  -->
     <div id="score-container" class="hidden">
       <p>Score: </p>
     </div>
+
     
   </header>
 
-  <div class="container">
-    <div id="question-container" class="hidden"></div>
-    
-  </div>
-    
+  <section class="quiz-container">
+    <div class="quiz-info">
+      <p> 
+        This quiz is going to test your knowledge in a wide variety of subjects. You will be given <span id="time">60 seconds</span> You may use any resources available to you, however once the timer is up, the quest will end and your final score will be recorded along with your initials. Pace yourself, and good luck. You'll need it.
+      </p>
+    </div>
+
+    <div class="btn-container">
+      <button id="start-btn"> Start Quiz</button>
+    </div>
+  </section>
 
 
 

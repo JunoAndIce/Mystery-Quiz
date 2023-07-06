@@ -11,6 +11,79 @@
   --white: white;
 }
 
+/* Dark mode shift  */
+[data-theme="dark"] {
+
+  --font-color: var(--white);
+  --bg-color:  var (--dark-gray);
+}
+
+
+/* Dark mode slider class */
+.switch {
+  height: 100px;
+  position: fixed;
+  right: 50px;
+  top: 50px;
+}
+
+/* places slider within header  */
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+/* Hides the checkbox from view  */
+.theme-switch input {
+  display:none;
+}
+
+/* Slider background  */
+.slider {
+  background-color: #bbbbbb;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  cursor: pointer;
+  position: absolute;
+  transition: .4s;
+}
+
+/* Slider circle handler */
+.slider:before {
+  background-color: var(--white);
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+/* Slider border  */
+.slider.round {
+  border-radius: 38px;
+}
+
+/* slider circle  */
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Make slider dark  */
+input:checked + .slider {
+  background-color: var(--dark-gray);
+}
+
+/* slider circle slider transition */
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
 .main-header {
   text-align: center;
   margin: 7.5em 0 1.5em 0;
@@ -24,6 +97,8 @@
   color: var(--dark-gray); /* Font Color */
 }
 
+/* fancy border under header  */
+/* Credits: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr */
 hr {
   border: none;
   border-top: 3px double var(--black);
@@ -51,10 +126,8 @@ hr:after {
 .quiz-container {
   display: flex;
   flex-wrap: wrap;
-
   margin: 0 5em 0;
   text-align: center;
-
 }
 
 .quiz-info p {
@@ -62,19 +135,21 @@ hr:after {
   line-height: 2em;
 }
 
+/* Centers the button div  */
 .btn-container {
   margin: auto;
 }
 
+/* Button controller  */
 #start-btn {
   cursor: pointer;
   background: transparent;
 
   margin-top: 15px;
   border-radius: 10px;
-  padding: 1.5em 3.5em;
+  padding: 1.0em 1.5em;
 
-  
+  font-size: 20px;
   color: rgb(44, 44, 44);
   border-color: #00AA66;
   border-style: solid;

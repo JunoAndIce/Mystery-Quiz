@@ -177,8 +177,13 @@ hr:after {
   font-weight: 800;
   font-size: 20px;
   color: var(--font-color);
-  border-color: #00AA66;
+  border-color: var(--font-color);
   border-style: solid;
+}
+
+#start-btn:hover {
+  color: var(--bg-color);
+  background-color: var(--font-color);
 }
 
 /* Questions Section  */
@@ -213,7 +218,7 @@ hr:after {
 
 }
 
-#quiz-answers button {
+.btn {
   color: var(--font-color);
   cursor: pointer;
   background: transparent;
@@ -222,10 +227,19 @@ hr:after {
   width: 600px;
 
   color: var(--font-color);
-  border-color: #00AA66;
+  border-color: var(--font-color);
   border-style: solid;
   border-radius: 10px;
   
   font-size: 1.7em;
   font-weight: 600;
+}
+
+.btn:hover {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+}
+
+.correct {
+  border-color: var(--font-color);
 }

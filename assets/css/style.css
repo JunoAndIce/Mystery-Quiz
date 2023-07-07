@@ -118,9 +118,34 @@ hr:after {
 }
 
 #score-container {
-  visibility: hidden;
+  display: none;
 }
 
+#score-container p {
+  color: var(--font-color);
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 1.8em;
+}
+
+#points_counter {
+  margin-left: 20px;
+}
+
+#time-container {
+  display: none;
+  flex-wrap: wrap;
+  width: 50px
+}
+
+#time-container p {
+  color: var(--font-color);
+  text-align: center;
+  font-weight: 700;
+  font-size: 4.5em;
+}
 
 .info-container {
   display: flex;
@@ -130,6 +155,7 @@ hr:after {
 }
 
 .quiz-info p {
+  margin-top: 15px;
   font-size: 1.2em;
   line-height: 2em;
   color: var(--font-color);

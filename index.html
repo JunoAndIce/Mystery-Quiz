@@ -37,22 +37,27 @@
     </label>
   </div>
 
-    <div class="main-header">
+    <div class="main-header" id="main-header">
       <a href="#">Mystery Quiz: The Breakdown</a>
     </div>
 
-    <hr>
+    <hr id="border-line">
     
     <!-- Score hidden by default  -->
-    <div id="score-container" class="hidden">
-      <p>Score: </p>
+    <div id="score-container">
+      <p>Score:</p>
+      <p id="points_counter">0</p#>
     </div>
 
+    <div id="time-container">
+      <p id="timer_secs">60</p>
+
+    </div>
     
   </header>
 
   <section class="info-container">
-    <div class="quiz-info">
+    <div class="quiz-info" id="quiz-info">
       <p> 
         This quiz is going to test your knowledge in a wide variety of subjects. You will be given <span id="time">60 seconds.</span> You may use any resources available to you, however once the timer is up, the quiz will end and your final score will be recorded along with your initials for the high score ranking.<br>Pace yourself, and good luck. You'll need it.
       </p>

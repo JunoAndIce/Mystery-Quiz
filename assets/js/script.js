@@ -10,6 +10,7 @@ var border_line = document.getElementById("border-line");
 var score_ctn = document.getElementById("score-container");
 var time_ctn  = document.getElementById("time-container");
 var timer_secs  = document.getElementById("timer_secs");
+var questionSec = document.getElementById("question-sec")
 
 var timeValue = 60;
 var userScore = 0;
@@ -23,6 +24,7 @@ function startQuiz(){
 
   score_ctn.style.display = "block";
   time_ctn.style.display = "inline";
+  questionSec.style.display = "block";
 
   startTimer(timeValue);
 
@@ -37,7 +39,12 @@ function startTimer(time){
       timer_secs.textContent = time; //changing the value of timeCount with time value
       time--; //decrement the time value
 
-      if (time < 0){
+      if (time < 10){
+        timer_secs.style.transition = "color 2s";
+        timer_secs.style.color = "red";
+      }
+
+      if (time < 0) {
         clearInterval(counter);
         console.log("Time's up!")
       }

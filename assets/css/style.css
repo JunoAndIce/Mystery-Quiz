@@ -25,6 +25,7 @@
   position: fixed;
   right: 50px;
   top: 50px;
+  overflow: hidden;
 }
 
 /* places slider within header  */
@@ -118,7 +119,7 @@ hr:after {
 }
 
 #score-container {
-  display: none;
+  display: none; /*will be changed to display: inline in js*/
 }
 
 #score-container p {
@@ -135,8 +136,7 @@ hr:after {
 }
 
 #time-container {
-  display: none;
-  flex-wrap: wrap;
+  display: none; /*will be changed to display: inline in js*/
   width: 50px
 }
 
@@ -147,7 +147,7 @@ hr:after {
   font-size: 4.5em;
 }
 
-.info-container {
+.info-section {
   display: flex;
   flex-wrap: wrap;
   margin: 0 5em 0;
@@ -174,9 +174,58 @@ hr:after {
   margin-top: 15px;
   border-radius: 10px;
   padding: 1.0em 1.5em;
-
+  font-weight: 800;
   font-size: 20px;
   color: var(--font-color);
   border-color: #00AA66;
   border-style: solid;
+}
+
+/* Questions Section  */
+.question-sec {
+  display: none;
+}
+
+.quiz-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+
+  margin: 30px auto;
+  width: 750px;
+  padding: 15px;
+
+  text-align: center;
+  overflow: hidden;
+  /* border: 10px solid var(--font-color) ;
+  border-radius: 50px; */
+}
+
+.question-sec h2{
+  color: var(--font-color);
+  padding: 20px;
+  font-weight: 700;
+  font-size: 2.9em;
+}
+
+#quiz-answers {
+
+}
+
+#quiz-answers button {
+  color: var(--font-color);
+  cursor: pointer;
+  background: transparent;
+  margin: 15px 0 15px;
+  padding: 16px;
+  width: 600px;
+
+  color: var(--font-color);
+  border-color: #00AA66;
+  border-style: solid;
+  border-radius: 10px;
+  
+  font-size: 1.7em;
+  font-weight: 600;
 }

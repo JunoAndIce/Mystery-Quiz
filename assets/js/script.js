@@ -96,7 +96,6 @@ function startQuiz(){
 
 function showQuestions(){
 
-  // removes placeholder question and answers.
   resetState();
 
   var currentQuestion = questions[currentQuizQuestion];
@@ -119,6 +118,8 @@ function showQuestions(){
   });
 }
 
+
+// Removes placeholder buttons
 function resetState() {
   nextButton.style.display = "none";
   while(answer_btn.firstChild){
@@ -126,6 +127,7 @@ function resetState() {
   }
 }
 
+// Timer Functionality
 function startTimer(time) {
   counter = setInterval(timer, 1000);
 
@@ -176,8 +178,31 @@ function selectAnswer(event) {
   nextButton.style.display = "block";
 }
 
+function nextQuestionHandler(){
+  currentQuizQuestion++;
+  if (currentQuizQuestion < questions.length){
+    showQuestions()
+  }
+  else {
+    console.log("no questions left")
+    localStorage.setItem("finalScore", userScore);
+    showScore();
+  }
+}
+
+function showScore(){
+  
+}
 // next button functionality 
-// nextButton.addEventListener
+nextButton.addEventListener("click", () =>{
+  if (currentQuizQuestion < questions.length){
+    nextQuestionHandler();
+  }
+  else if (currentQuizQuestion = questions.length) {
+    console.log("no questions left")
+    // showScore();
+  }
+})
 
 
 

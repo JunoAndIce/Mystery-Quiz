@@ -272,7 +272,12 @@ hr:after {
   font-size: 20px;
 }
 
-.next-btn:hover:not([disabled]) {
+.next-btn:hover {
   background-color: var(--font-color);
   color: var(--bg-color);
 }
+
+/* Questions Section  */
+/* .score-sec {
+  display: none;
+} */

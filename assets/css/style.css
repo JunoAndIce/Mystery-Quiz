@@ -97,6 +97,26 @@ input:checked + .slider:before {
   color: var(--font-color); /* Font Color */
 }
 
+#viewscore-box {
+  text-decoration: none;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+#viewscore-box a{
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border-style: solid;
+
+  border-radius: 10px;
+  padding: 1.0em 1.5em;
+  font-weight: 800;
+  font-size: 20px;
+
+  border-color: var(--font-color);
+  color: var(--font-color); /* Font Color */
+}
 /* fancy border under header  */
 /* Credits: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr */
 hr {

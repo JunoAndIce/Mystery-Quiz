@@ -6,6 +6,7 @@
 // When the timer runs out, the test ends immediately and score is recorded
 var start_btn = document.getElementById("start-btn");
 var header = document.getElementById("main-header");
+var view_score = document.getElementById("viewscore-text");
 var quiz_info = document.getElementById("quiz-info");
 var border_line = document.getElementById("border-line");
 var score_ctn = document.getElementById("score-container");
@@ -156,7 +157,8 @@ function hideMain() {
   start_btn.style.display = "none";
   header.style.display = "none";
   quiz_info.style.display = "none";
-  border_line .style.display = "none";
+  border_line.style.display = "none";
+  view_score.style.display = "none";
 }
 
 function showQuiz() {

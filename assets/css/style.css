@@ -368,3 +368,82 @@ hr:after {
   background-color: var(--font-color);
   color: var(--bg-color);
 }
+
+/* High score section  */
+/* .highscore-sec {
+  display: none;
+} */
+
+.highscore-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+
+  text-align: center;
+  overflow: hidden;
+
+  margin: 30px auto;
+  width: 750px;
+  padding: 15px;
+
+
+  /* border: 10px solid var(--font-color) ;
+  border-radius: 50px; */
+}
+
+.highscore-card h2{
+  padding: 20px;
+
+  font-weight: 700;
+  font-size: 2.9em;
+
+  color: var(--font-color);
+}
+
+
+#play-btn {
+
+  cursor: pointer;
+  background: transparent;
+
+  margin-top: 20px;
+  width: 200px;
+
+  color: var(--font-color);
+  border-color: var(--font-color);
+  border-style: solid;
+
+  border-radius: 10px;
+  padding: 1.0em 1.5em;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+#play-btn:hover {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+}
+
+#clear-btn {
+
+  cursor: pointer;
+  background: transparent;
+
+  margin-top: 20px;
+  width: 200px;
+
+  color: var(--font-color);
+  border-color: var(--font-color);
+  border-style: solid;
+
+  border-radius: 10px;
+  padding: 1.0em 1.5em;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+#clear-btn:hover {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+}

@@ -87,20 +87,33 @@ var questions = [
 
 // Quiz initialization. Removes main page elements and shows quiz elements
 function startQuiz(){
-  start_btn.style.display = "none";
-  header.style.display = "none";
-  quiz_info.style.display = "none";
-  border_line .style.display = "none";
-
-  score_ctn.style.display = "block";
-  time_ctn.style.display = "inline";
-  question_sec.style.display = "block";
+  hideMain();
+  showQuiz();
 
   userScore = 0;
   currentQuizQuestion = 0;
 
   showQuestions();
   startTimer(timeValue);
+}
+
+function hideMain() {
+  start_btn.style.display = "none";
+  header.style.display = "none";
+  quiz_info.style.display = "none";
+  border_line .style.display = "none";
+}
+
+function showQuiz() {
+  score_ctn.style.display = "block";
+  time_ctn.style.display = "inline";
+  question_sec.style.display = "block";
+}
+
+function hideQuiz() {
+  score_ctn.style.display = "none";
+  time_ctn.style.display = "none";
+  question_sec.style.display = "none";
 }
 
 function showQuestions() {
@@ -213,14 +226,48 @@ function nextQuestionHandler(){
 }
 
 function showScore(){
+
   resetState()
 
   final_score.textContent = userScore;
 
+  hideQuiz();
+
   score_sec.style.display = "block"
-  score_ctn.style.display = "none";
-  time_ctn.style.display = "none";
-  question_sec.style.display = "none";
+
+}
+
+
+
+
+var leaderboards = [];
+
+function init() {
+  var storedLeaderboards = JSON.parse(localStorage.getItem("leaderboards"));
+  
+  if (storedLeaderboards != null) {
+    leaderboards = storedLeaderboards;
+      console.log(leaderboards)
+  }
+}
+
+function submitScore(event) {
+  event.preventDefault();
+
+  var initials = document.getElementById("initials").value;
+
+  // console.log(_ini);
+
+  var newScore = {
+    initials: initials,
+    score: userScore,
+  };
+
+  init();
+  leaderboards.push(newScore);
+
+  window.localStorage.setItem("leaderboards", JSON.stringify(leaderboards));
+  window.location = "score.html";
 }
 
 // next button functionality 
@@ -233,20 +280,6 @@ next_button.addEventListener("click", () =>{
     // console.log("Final score: " + userScore)
   }
 })
-
-
-
-
-function submitScore(event) {
-
-
-  var initials = document.getElementById("initials").value;
-  event.preventDefault();
-  let _ini = initials.toString();
-  // console.log(_ini);
-  localStorage.setItem(_ini, userScore);
-
-}
 
 start_btn.addEventListener("click", function(){
   console.log("Quiz started! Button was pressed!")

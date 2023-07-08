@@ -109,11 +109,34 @@ var questions = [
     question: "What is the name of John Cena's intro?",
     answers: [
       {text: "You can't see me", correct: false},
-        {text: "Booyaka 619", correct: true},
-        {text: "The Time is Now", correct: false},
-        {text: "Line", correct: false},
+        {text: "Booyaka 619", correct: false},
+        {text: "The Time is Now", correct: true},
+        {text: "Rest in Peace", correct: false},
     ]
-  }
+  },
+
+  
+  {
+    question: "What is the name of Frisk's best friend?",
+    answers: [
+      {text: "Asgore", correct: false},
+      {text: "Asriel", correct: true},
+      {text: "Toriel", correct: false},
+      {text: "Sans", correct: false},
+        
+    ]
+  },
+
+  
+  {
+    question: "Who is Junko Enoshima?",
+    answers: [
+      {text: "The Ultimate Despair", correct: true},
+        {text: "The Ultimate Lucky Student", correct: false},
+        {text: "The Ultimate Caretaker", correct: false},
+        {text: "The Ultimate Fashionista", correct: true},
+    ]
+  },
 ]
 
 

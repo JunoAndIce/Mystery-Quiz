@@ -9,6 +9,7 @@ if (currentTheme) {
   
     if (currentTheme === 'dark') {
       // Checks the checkbox element
+      
         toggleSwitch.checked = true;
     }
 }

@@ -9,19 +9,28 @@ var header = document.getElementById("main-header");
 var quiz_info = document.getElementById("quiz-info");
 var border_line = document.getElementById("border-line");
 var score_ctn = document.getElementById("score-container");
-var points = document.getElementById("points_counter");
+var points = document.getElementById("score_counter");
 var time_ctn  = document.getElementById("time-container");
 var timer_secs  = document.getElementById("timer_secs");
 var question_sec = document.getElementById("question-sec");
 var question_text = document.getElementById("question-text");
 var answer_btn = document.getElementById("quiz-answers");
-var nextButton = document.getElementById("next-btn");
+var next_button = document.getElementById("next-btn");
 
 
-var timeValue = 60;
+
+var score_sec = document.getElementById("score-sec");
+var final_score = document.getElementById("final-score");
+var submit_btn = document.getElementById("submit-btn");
+
+
+
+
+const timeValue = 15;
 var userScore = 0;
 var counter;
 var currentQuizQuestion = 0;
+;
 
 var questions = [
   {
@@ -34,43 +43,43 @@ var questions = [
     ]
   },
 
-  {
-    question: "Two black men visited Paris in 2012 and performed their hit song over 12 times in a row. Who were these men?",
+  { 
+    question: "What was the Prince of Persia's real name?",
     answers: [
-      {text: "Lil Yachty and Drake", correct: false},
-        {text: "Snoop Dogg and Dr.Dre", correct: false},
-        {text: "Kanye West and Jay-Z", correct: true},
-        {text: "Lil Uzi Vert and Playboi Carti", correct: false},
+      {text: "Malik", correct: false},
+        {text: "Unknown", correct: true},
+        {text: "Shahraman", correct: false},
+        {text: "Abdul", correct: false},
     ]
   },
 
   {
-    question: "Two black men visited Paris in 2012 and performed their hit song over 12 times in a row. Who were these men?",
+    question: "Who is Pokémon #123?",
     answers: [
-      {text: "Lil Yachty and Drake", correct: false},
-        {text: "Snoop Dogg and Dr.Dre", correct: false},
-        {text: "Kanye West and Jay-Z", correct: true},
-        {text: "Lil Uzi Vert and Playboi Carti", correct: false},
+      {text: "Garchomp", correct: false},
+        {text: "Pikachu", correct: false},
+        {text: "Mr. Mime", correct: false},
+        {text: "Scyther", correct: true},
     ]
   },
 
   {
-    question: "Two black men visited Paris in 2012 and performed their hit song over 12 times in a row. Who were these men?",
+    question: "What is Cloud's neutral special called in his limit form?",
     answers: [
-      {text: "Lil Yachty and Drake", correct: false},
-        {text: "Snoop Dogg and Dr.Dre", correct: false},
-        {text: "Kanye West and Jay-Z", correct: true},
-        {text: "Lil Uzi Vert and Playboi Carti", correct: false},
+      {text: "Limit Climb Hazard", correct: false},
+        {text: "Limit Cross Slash", correct: false},
+        {text: "Limit Blade Beam", correct: true},
+        {text: "Finishing Touch", correct: false},
     ]
   },
 
   {
-    question: "Two black men visited Paris in 2012 and performed their hit song over 12 times in a row. Who were these men?",
+    question: "Who is Zuko?",
     answers: [
-      {text: "Lil Yachty and Drake", correct: false},
-        {text: "Snoop Dogg and Dr.Dre", correct: false},
-        {text: "Kanye West and Jay-Z", correct: true},
-        {text: "Lil Uzi Vert and Playboi Carti", correct: false},
+      {text: "An Earthbender", correct: false},
+        {text: "A Waterbender", correct: false},
+        {text: "An Airbender", correct: false},
+        {text: "A Firebender", correct: true},
     ]
   }
 ]
@@ -94,7 +103,7 @@ function startQuiz(){
   startTimer(timeValue);
 }
 
-function showQuestions(){
+function showQuestions() {
 
   resetState();
 
@@ -115,13 +124,15 @@ function showQuestions(){
       button.dataset.correct = answer.correct;
     }
     button.addEventListener("click", selectAnswer);
+
   });
+  
 }
 
 
-// Removes placeholder buttons
+// Removes answer buttons
 function resetState() {
-  nextButton.style.display = "none";
+  next_button.style.display = "none";
   while(answer_btn.firstChild){
     answer_btn.removeChild(answer_btn.firstChild);
   }
@@ -136,23 +147,24 @@ function startTimer(time) {
     timer_secs.textContent = time; //changing the value of timeCount with time value
     time--; //decrement the time value
 
-    if (time < 10){
+    if (time < 5){
       timer_secs.style.transition = "color 1.5s";
       timer_secs.style.color = "red";
     }
 
     if (time < 0) {
       clearInterval(counter);
-      console.log("Time's up!")
-      // endQuiz();
+      // console.log("Time's up!")
+      answerChosen();
     }
   }
 }
 
-// Selected answer class. Gives color to correct and incorrect
+// Selected answer class. Gives color to correct and incorrect and controls what happens when an answer is selected.
 function selectAnswer(event) {
   var selectedAnswer = event.target;
   var isCorrect = selectedAnswer.dataset.correct === "true";
+  clearInterval(counter);
 
   if (isCorrect) {
     console.log("correct answer chosen")
@@ -165,49 +177,76 @@ function selectAnswer(event) {
     selectedAnswer.classList.add("incorrect");
   }
 
-  // create an array for the buttons and run a foreach loop on it 
+  answerChosen();
+}
+
+  // create an array for the buttons and run a foreach loop on it. Each answer that is true will turn green.
+  // Disable buttons, and display the next button
   // Credits: GreatStack on YT 
+function answerChosen(){
   Array.from(answer_btn.children).forEach(button=>{
     if(button.dataset.correct === "true"){
       button.classList.add("correct");
 
     }
     button.disabled = true;
-
+    next_button.style.display = "block";
   });
-  nextButton.style.display = "block";
 }
 
+// Reset the screen with the next set of questions, once all questions are done, end the quiz.
 function nextQuestionHandler(){
   currentQuizQuestion++;
   if (currentQuizQuestion < questions.length){
+
+    timer_secs.style.transition = "unset";
+    timer_secs.style.color = "var(--font-color)";
+    timer_secs.textContent = timeValue;
+
     showQuestions()
+    startTimer(timeValue);
   }
   else {
-    console.log("no questions left")
-    localStorage.setItem("finalScore", userScore);
+    // console.log("no questions left")
     showScore();
   }
 }
 
 function showScore(){
-  
+  resetState()
+
+  final_score.textContent = userScore;
+
+  score_sec.style.display = "block"
+  score_ctn.style.display = "none";
+  time_ctn.style.display = "none";
+  question_sec.style.display = "none";
 }
+
 // next button functionality 
-nextButton.addEventListener("click", () =>{
+next_button.addEventListener("click", () =>{
   if (currentQuizQuestion < questions.length){
     nextQuestionHandler();
   }
   else if (currentQuizQuestion = questions.length) {
-    console.log("no questions left")
-    // showScore();
+    // console.log("no questions left")
+    // console.log("Final score: " + userScore)
   }
 })
 
 
 
 
+function submitScore(event) {
 
+
+  var initials = document.getElementById("initials").value;
+  event.preventDefault();
+  let _ini = initials.toString();
+  // console.log(_ini);
+  localStorage.setItem(_ini, userScore);
+
+}
 
 start_btn.addEventListener("click", function(){
   console.log("Quiz started! Button was pressed!")

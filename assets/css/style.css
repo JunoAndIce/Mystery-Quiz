@@ -118,6 +118,7 @@ hr:after {
   top: -13px;
 }
 
+/* Score Viewer  */
 #score-container {
   display: none; /*will be changed to display: inline in js*/
 }
@@ -131,10 +132,11 @@ hr:after {
   font-size: 1.8em;
 }
 
-#points_counter {
-  margin-left: 20px;
+#score_counter {
+  /* margin-left: 20px; */
 }
 
+/* Time Section  */
 #time-container {
   display: none; /*will be changed to display: inline in js*/
   width: 50px
@@ -147,6 +149,7 @@ hr:after {
   font-size: 4.5em;
 }
 
+/* Main page quiz info  */
 .info-section {
   display: flex;
   flex-wrap: wrap;
@@ -161,8 +164,8 @@ hr:after {
   color: var(--font-color);
 }
 
-/* Centers the button div  */
-.btn-container {
+/* Start button Section  */
+.start-container {
   margin: auto;
 }
 
@@ -196,18 +199,18 @@ hr:after {
   flex-direction: column;
   justify-content: center;
   align-items: center ;
+  text-align: center;
+  overflow: hidden;
 
   margin: 30px auto;
   width: 750px;
   padding: 15px;
 
-  text-align: center;
-  overflow: hidden;
   /* border: 10px solid var(--font-color) ;
   border-radius: 50px; */
 }
 
-.question-sec h2{
+.quiz-card h2{
   color: var(--font-color);
   padding: 20px;
   font-weight: 700;
@@ -218,17 +221,18 @@ hr:after {
   color: var(--font-color);
   cursor: pointer;
   background: transparent;
+  border-style: solid;
+
   margin: 15px 0 15px;
   padding: 16px;
   width: 600px;
+  border-radius: 10px;
+
+  font-size: 1.7em;
+  font-weight: 600;
 
   color: var(--font-color);
   border-color: var(--font-color);
-  border-style: solid;
-  border-radius: 10px;
-  
-  font-size: 1.7em;
-  font-weight: 600;
 }
 
 .btn:hover:not([disabled]) {
@@ -243,33 +247,34 @@ hr:after {
 
 /* classes for js use only  */
 .correct {
-  border-color: #00AA66;
-  background-color: #00AA66
+  border-color: #00cf7c;
+  background-color: #00cf7c
 }
 
 .incorrect {
-  border-color: #aa0000;
-  background-color: #aa0000;
+  border-color: #e40000;
+  background-color: #e40000;
 }
 
+/* Next button section  */
 .next-container {
   margin: auto;
 }
 
 .next-btn {
-  color: var(--font-color);
   cursor: pointer;
   background: transparent;
+  border-style: solid;
+
   margin: 15px 0 15px;
   padding: 16px;
 
-  color: var(--font-color);
-  border-color: var(--font-color);
-  border-style: solid;
   border-radius: 10px;
-  
   font-weight: 800;
   font-size: 20px;
+
+  color: var(--font-color);
+  border-color: var(--font-color);
 }
 
 .next-btn:hover {
@@ -277,7 +282,89 @@ hr:after {
   color: var(--bg-color);
 }
 
-/* Questions Section  */
-/* .score-sec {
+/* Score Section  */
+.score-sec {
   display: none;
-} */
+}
+
+.score-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+
+  text-align: center;
+  overflow: hidden;
+
+  margin: 30px auto;
+  width: 750px;
+  padding: 15px;
+
+
+  /* border: 10px solid var(--font-color) ;
+  border-radius: 50px; */
+}
+
+.score-card h2{
+  padding: 20px;
+
+  font-weight: 700;
+  font-size: 2.9em;
+
+  color: var(--font-color);
+}
+
+.score-card p {
+  font-weight: 700;
+  font-size: 2.9em;
+
+  color: var(--font-color);
+}
+
+.score-card form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+}
+
+.score-card label {
+  /* font-weight: 700; */
+  color: var(--font-color);
+  font-size: 1.2em;
+}
+
+#initials {
+  border-style: solid;
+  text-align: center;
+
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+
+  color: var(--font-color);
+  border-color: var(--font-color);
+}
+
+#submit-btn {
+
+  cursor: pointer;
+  background: transparent;
+
+  margin-top: 20px;
+  width: 200px;
+
+  color: var(--font-color);
+  border-color: var(--font-color);
+  border-style: solid;
+
+  border-radius: 10px;
+  padding: 1.0em 1.5em;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.score-card #submit-btn:hover {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+}

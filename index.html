@@ -16,7 +16,7 @@
 <!-- TODO: Start showing questions  -->
 <!-- TODO: When Question is wrong, highlight correct answer -->
 <!-- TODO: When Question is correct, highlight answer -->
-<!-- TODO: Add Score +1 for getting the answer correct -->
+<!-- TODO: Add Score +20 for getting the answer correct -->
 <!-- TODO: After both outcomes, add next question button -->
 <!-- TODO: After all questions complete / Timer runs out, show game end screen-->
 <!-- TODO: Have user enter their initials-->
@@ -46,11 +46,11 @@
     <!-- Score hidden by default  -->
     <div id="score-container">
       <p>Score:</p>
-      <p id="points_counter">0</p#>
+      <p id="score_counter">0</p#>
     </div>
 
     <div id="time-container">
-      <p id="timer_secs">60</p>
+      <p id="timer_secs">15</p>
 
     </div>
     
@@ -59,11 +59,11 @@
   <section class="info-section">
     <div class="quiz-info" id="quiz-info">
       <p> 
-        This quiz is going to test your knowledge in a wide variety of subjects. You will be given <span id="time">60 seconds.</span> You may use any resources available to you, however once the timer is up, the quiz will end and your final score will be recorded along with your initials for the high score ranking.<br>Pace yourself, and good luck. You'll need it.
+        This quiz is going to test your knowledge in a wide variety of subjects. You will be given <span id="time">15 seconds per question.</span> You may use any resources available to you, however once the timer is up the answer will be shown, and you'll be forced to coninue to the next question. The quiz will then end and your final score will be recorded along with your initials for the high score ranking.<br>Pace yourself, and good luck. You'll need it.
       </p>
     </div>
 
-    <div class="btn-container">
+    <div class="start-container">
       <button id="start-btn"> START QUIZ</button>
     </div>
   </section>
@@ -85,14 +85,16 @@
 
   <section class="score-sec" id="score-sec">
     <div class="score-card" id="score">
-      <h2 id="score-text">Your final score is:</h2> 
-      <p id="fina-score">0</p#>
+
+      <h2 id="score-header">Your final score is:</h2> 
+      <p id="final-score">0</p#>
 
         <form id="initials-entry">
           <label for="initials">Enter your Initials:</label>
-          <input type="text" name ="initials" id="initials" required>
-          <input type="submit" value="Sumbit">
+          <input id="initials" type="text" name ="initials" maxlength="3" autocomplete="off" required>
+          <input id="submit-btn" type="submit" value="Submit"  onclick="submitScore(event)" >
         </form>
+
     </div>
   </section>
 

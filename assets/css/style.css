@@ -369,10 +369,10 @@ hr:after {
   color: var(--bg-color);
 }
 
-/* High score section  */
-/* .highscore-sec {
-  display: none;
-} */
+
+
+/* SCORE SECTION  */
+/* HANDLES THE CSS FOR SCORE.HTML  */
 
 .highscore-card {
   display: flex;
@@ -401,13 +401,19 @@ hr:after {
   color: var(--font-color);
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center ;
+  
+}
 
-#play-btn {
+.ctrl-btn {
 
   cursor: pointer;
   background: transparent;
 
-  margin-top: 20px;
+  margin: 20px;
   width: 200px;
 
   color: var(--font-color);
@@ -420,30 +426,27 @@ hr:after {
   font-size: 20px;
 }
 
-#play-btn:hover {
+.ctrl-btn:hover {
   background-color: var(--font-color);
   color: var(--bg-color);
 }
 
-#clear-btn {
+#leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
-  cursor: pointer;
-  background: transparent;
+#initials-entry {
+  list-style-type: none;
+  list-style-position: inside;
+  white-space: pre;
 
-  margin-top: 20px;
-  width: 200px;
+  /* margin-top: 15px; */
+  font-size: 1.6em;
 
+  font-weight: 600;
   color: var(--font-color);
-  border-color: var(--font-color);
-  border-style: solid;
-
-  border-radius: 10px;
-  padding: 1.0em 1.5em;
-  font-weight: 800;
-  font-size: 20px;
-}
-
-#clear-btn:hover {
-  background-color: var(--font-color);
-  color: var(--bg-color);
 }

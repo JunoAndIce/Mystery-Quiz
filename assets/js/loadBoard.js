@@ -1,3 +1,5 @@
+// Credits to Christopher Banta for leaderboard code 
+
 var leaderList = document.getElementById("leaderboard-list");
 var leaderboard = [];
 
@@ -25,7 +27,7 @@ function createEntries() {
 
         var li = document.createElement("li");
 
-        li.textContent = leaderBoardInfo.initials + ": " + leaderBoardInfo.score;;
+        li.textContent = leaderBoardInfo.initials + ":       " + leaderBoardInfo.score;;
 
         li.setAttribute("id","initials-entry");
 
@@ -35,7 +37,7 @@ function createEntries() {
 
 //clears local storage for leaderboards
 clear.addEventListener("click", function() {
-    localStorage.clear("leaderboards");
+    localStorage.removeItem("leaderboards");
     window.location.href="score.html";
 })
 

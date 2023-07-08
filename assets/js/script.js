@@ -81,6 +81,38 @@ var questions = [
         {text: "An Airbender", correct: false},
         {text: "A Firebender", correct: true},
     ]
+  },
+
+  {
+    question: "What is the name of Diluc's elemental skill?",
+    answers: [
+      {text: "Searing Onslaught", correct: true},
+        {text: "Dawn", correct: false},
+        {text: "Blessing of Phoenix", correct: false},
+        {text: "Tempered Sword", correct: false},
+    ]
+  },
+
+  
+  {
+    question: "What is the name of Furi's main character?",
+    answers: [
+      {text: "Burst", correct: false},
+        {text: "Rider", correct: true},
+        {text: "Edge", correct: false},
+        {text: "Line", correct: false},
+    ]
+  },
+
+  
+  {
+    question: "What is the name of John Cena's intro?",
+    answers: [
+      {text: "You can't see me", correct: false},
+        {text: "Booyaka 619", correct: true},
+        {text: "The Time is Now", correct: false},
+        {text: "Line", correct: false},
+    ]
   }
 ]
 
@@ -263,6 +295,7 @@ function submitScore(event) {
     score: userScore,
   };
 
+  // gets the current local storage and adds a new score to it.
   init();
   leaderboards.push(newScore);
 

@@ -86,8 +86,10 @@ input:checked + .slider:before {
 }
 
 .main-header {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  margin: 7.5em 0 1.5em 0;
+  margin: 6.5em 0 1.5em 0;
 }
 
 .main-header a {
@@ -123,11 +125,13 @@ hr {
   border: none;
   overflow: visible;
   text-align: center;
+  margin: auto;
+  margin-top: 20px;
   border-top: 3px double var(--font-color);
   color: var(--font-color);
   height: 5px;
-  width: 750px;
-  margin: auto;
+  width: 50vw;
+
 }
 
 hr:after {
@@ -194,7 +198,7 @@ hr:after {
   cursor: pointer;
   background: transparent;
 
-  margin-top: 15px;
+  margin: 15px auto;
   border-radius: 10px;
   padding: 1.0em 1.5em;
   font-weight: 800;
@@ -216,21 +220,21 @@ hr:after {
 
 .quiz-card {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center ;
   text-align: center;
   overflow: hidden;
+  flex-wrap: wrap;
 
   margin: 30px auto;
-  width: 750px;
+  width: 100vw;
   padding: 15px;
 
   /* border: 10px solid var(--font-color) ;
   border-radius: 50px; */
 }
 
-.quiz-card h2{
+.quiz-card h2 {
   color: var(--font-color);
   padding: 20px;
   font-weight: 700;
@@ -245,7 +249,7 @@ hr:after {
 
   margin: 15px 0 15px;
   padding: 16px;
-  width: 600px;
+  width: 50vw;
   border-radius: 10px;
 
   font-size: 1.7em;
@@ -317,7 +321,7 @@ hr:after {
   overflow: hidden;
 
   margin: 30px auto;
-  width: 750px;
+  width: 100vw;
   padding: 15px;
 
 
@@ -337,7 +341,7 @@ hr:after {
 .score-card p {
   font-weight: 700;
   font-size: 2.9em;
-
+  margin: 10px auto;
   color: var(--font-color);
 }
 
@@ -371,7 +375,7 @@ hr:after {
   cursor: pointer;
   background: transparent;
 
-  margin-top: 20px;
+  margin-top: 30px;
   width: 200px;
 
   color: var(--font-color);
@@ -404,7 +408,7 @@ hr:after {
   overflow: hidden;
 
   margin: 30px auto;
-  width: 750px;
+  width: 100vw;
   padding: 15px;
 
 
@@ -414,7 +418,7 @@ hr:after {
 
 .highscore-card h2{
   padding: 20px;
-
+  margin-top: 30px;
   font-weight: 700;
   font-size: 2.9em;
 
@@ -456,7 +460,7 @@ hr:after {
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
+  width: 100vw;
 }
 
 #initials-entry {
@@ -469,4 +473,50 @@ hr:after {
 
   font-weight: 600;
   color: var(--font-color);
+}
+
+/* Tablets - header changes color */
+@media screen and (max-width: 992px) {
+}
+
+/* Large smartphones - navbar changes color */
+@media screen and (max-width: 768px) {
+  .main-header a {
+    font-size: 2.3em;
+  }
+
+  .quiz-info p {
+    font-size: 1em;
+  }
+
+  .quiz-card h2 {
+    font-size: 1.9em;
+  }
+
+  .btn {
+    font-size: 1em;
+  }
+
+  .score-card h2 {
+    font-size: 1.6em;
+  }
+
+  #viewscore-box a{
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    border-style: solid;
+  
+    border-radius: 10px;
+    padding: 1.0em 1.5em;
+    font-weight: 800;
+    font-size: 0.8em;
+  }
+}
+
+/* Small smartphones - image placeholders change color */
+@media screen and (max-width: 576px) {
+  #question-sec {
+    width: 50vw;
+  }
 }
